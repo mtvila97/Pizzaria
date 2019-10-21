@@ -9,6 +9,7 @@ void anotarPedido();
 
 void menuConfiguracoes();
 void configCardapio();
+void configSistema();
 
 
 //structs
@@ -55,6 +56,7 @@ void menuPedido(){
 		printf("1 | Novo pedido\n");
 		printf("2 | Cancelar pedido\n");
 		printf("3 | Lista de pedidos\n");
+		printf("4 | Voltar\n");
 		cabecalhoFIM();
 		scanf("%d", &opcao);
 		
@@ -67,6 +69,9 @@ void menuPedido(){
 				break;
 			case 3:
 				//listaPedido();
+				break;
+			case 4:
+				menuPrincipal();
 				break;
 			default:
 				printf("Opção Inválida!\n");
@@ -116,7 +121,8 @@ void menuConfiguracoes(){
 	printf("1 | Relatório\n");
 	printf("2 | Backup\n");
 	printf("3 | Config cardápio\n");
-	printf("4 | Voltar\n");
+	printf("4 | Config sistema\n");
+	printf("5 | Voltar\n");
 	cabecalhoFIM();
 	scanf("%d", &opcao);
 		switch (opcao){
@@ -130,6 +136,9 @@ void menuConfiguracoes(){
 			configCardapio();
 			break;
 		case 4:
+			configSistema();
+			break;
+		case 5:
 			menuPrincipal();
 			break;
 		default:
@@ -142,14 +151,7 @@ void menuConfiguracoes(){
 
 void configCardapio(){
 	int opcao, listaP;
-	CARDAPIO cdp;
 	
-	FILE* cardapio;
-	cardapio = fopen("configs/cardapio.txt", "ab");
-	
-	if(cardapio == NULL){
-		printf("Erro na abertura do arquivo!\n");
-	} else{
 	do{
 		cabecalhoCardapio();
 		printf("1 | Adicionar novo produto\n");
@@ -183,6 +185,14 @@ void configCardapio(){
 			}
 		} while(opcao != 5);
 	}
+
+void configSistema(){
+	int opcao;
+		cabecalhoConfiguracoes();
+		printf("1 | Alterar nome da pizzaria\n");
+		printf("2 | Alterar identificação da pizzaria\n");
+		printf("3 | Alterar endereço da pasta backup\n");
+		printf("4 | Funcionarios\n");
+		printf("5 | Voltar\n");
+		cabecalhoFIM();
 }
-
-

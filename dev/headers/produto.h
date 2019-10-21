@@ -1,17 +1,15 @@
 typedef struct cardapio CARDAPIO;
 struct cardapio{
 	//Identificao do produto
-	char iProduto[6];
+	char idProduto[6];
 	//Nome do produto
 	char nProduto[50];
 	//ingredientes do produto
 	char igProduto[50];
 	//valor do produto
-	char vProduto[50];
+	float vProduto;
 	//char bebida;
 	char bProduto[50];
-	//char tipo do produto
-	char tProduto[10];
 };
 
 //Cabecarios
@@ -26,6 +24,7 @@ void addCardapio(){
 	cabecalhoCardapio();
 	printf("1 | Adicionar bebidas\n");
 	printf("2 | Adicionar pizzas\n");
+	printf("3 | Voltar\n");
 	cabecalhoFIM();
 	scanf("%d", &opcao);
 	switch (opcao){
@@ -34,6 +33,9 @@ void addCardapio(){
 			break;
 		case 2:
 			addPPizzas();
+			break;
+		case 3:
+			menuConfiguracoes();
 			break;
 		default:
 			printf("Opção Inválida!\n");
@@ -58,11 +60,11 @@ void addPBebidas(){
 				
 		fflush(stdin);
 		printf("Nª de identificação da bebida: ");
-		gets(cdp.iProduto);
+		gets(cdp.idProduto);
 				
 		fflush(stdin);
 		printf("Valor da bebida: R$ ");
-		gets(cdp.vProduto);
+		scanf("%f", &cdp.vProduto);
 		
 		fwrite(&cdp, sizeof(CARDAPIO), 1, cardapiob);
 	}
@@ -85,7 +87,7 @@ void addPPizzas(){
 				
 		fflush(stdin);
 		printf("Nª de identificação da pizza: ");
-		gets(cdp.iProduto);
+		gets(cdp.idProduto);
 		
 		fflush(stdin);
 		printf("ingrediente: ");
@@ -93,7 +95,7 @@ void addPPizzas(){
 				
 		fflush(stdin);
 		printf("Valor da pizza: R$ ");
-		gets(cdp.vProduto);
+		scanf("%f", &cdp.vProduto);
 		
 		fwrite(&cdp, sizeof(CARDAPIO), 1, cardapiop);
 	}
@@ -105,6 +107,7 @@ void listaProdutos(){
 	cabecalhoCardapio();
 	printf("1 | Lista de bebidas\n");
 	printf("2 | Lista de pizzas\n");
+	printf("3 | Voltar\n");
 	cabecalhoFIM();
 	scanf("%d", &opcao);
 	switch (opcao){
@@ -113,6 +116,9 @@ void listaProdutos(){
 			break;
 		case 2:
 			listarPPizzas();
+			break;
+		case 3:
+			configCardapio();
 			break;
 		default:
 			printf("Opção Inválida!\n");
@@ -134,8 +140,8 @@ void listarPBebidas(){
 	} else {
 		while(fread(&cdp, sizeof(CARDAPIO), 1, cardapiob) == 1){
 			printf("Nome da bebida: %s\n", cdp.nProduto);
-			printf("Identificacao da bebida: %s\n", cdp.iProduto);
-			printf("Valor do produto: %s\n", cdp.vProduto);
+			printf("Identificacao da bebida: %s\n", cdp.idProduto);
+			printf("Valor do produto R$ %0.2f\n", cdp.vProduto);
 			cabecalhoFLISTAS();
 		}
 	}
@@ -156,9 +162,9 @@ void listarPPizzas(){
 	} else {
 		while(fread(&cdp, sizeof(CARDAPIO), 1, cardapiop) == 1){
 			printf("Nome da pizza: %s\n", cdp.nProduto);
-			printf("Identificacao da pizza: %s\n", cdp.iProduto);
+			printf("Identificacao da pizza: %s\n", cdp.idProduto);
 			printf("Ingredientes: %s\n", cdp.igProduto);
-			printf("Valor da pizza: %s\n", cdp.vProduto);
+			printf("Valor da pizza R$ %0.2f\n", cdp.vProduto);
 			cabecalhoFLISTAS();
 		}
 	}
