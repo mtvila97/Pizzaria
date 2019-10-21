@@ -1,0 +1,8 @@
+UPDATE 0.1:
+- Sistema para checagem da Configuração Inicial ( Verifica se o exite o idUSERS.TXT, caso nao exista, ele inica uma tela para definir o usuario PRINCIPAL do sistema);
+- Tela de login.
+
+UPDATE 0.2:
+- Menu principal;
+- Cria pasta configs caso nao exista; 
+- Sistema para adicionar de registro de funcionarios ( Ler Issues ).  

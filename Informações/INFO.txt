@@ -1,0 +1,20 @@
+Funções de cada integrante:
+Henrique - Resp. Projeto, Modelagem do App 1 (Geral);
+Jair     - Relatórios, Modelagem visual;
+Matheus  - Manuais, Redes;
+Paloma   - Documentação, Analise;
+Vinicius - Modelagem do App 2
+
+
+- Utilizar o teclado Numero para transição das telas:
+1 - Pedido
+2 - Estoque
+3 - Configurações
+
+- Fullscreen, Limitar as opções de teclas para o usuario;
+
+- Criar uma tela nas Configurações para as promoções:
+Criar promoção através de um código para Identificação.
+Deletar uma promoção.
+
+No PIM, resolvi nao utilizar mais o mysql, por causa do tempo, e iria ficar complexo demais o trabalho, que acabaria atrasando todo o processo.
