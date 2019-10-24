@@ -40,8 +40,7 @@ void checkConfig(){
 			cabecalhoInicial();
 			printf("O sistema não esta configurado. Deseja configurar ?\n");
 			printf("Digite : 1 - SIM | 2 - NÃO\n");
-			printf("----------------------------------\n");
-			printf("Opção desejada: ");	
+			cabecalhoFIM();
 			scanf("%d", &opcao);
 			
 			switch (opcao){
@@ -95,7 +94,4 @@ void createConfig(){
 	cadastrarUsuarios();
 	
 }
-
-
-
 

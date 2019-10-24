@@ -11,7 +11,7 @@ void menuConfiguracoes();
 void configCardapio();
 void configSistema();
 
-
+	
 //structs
 typedef struct nvPedido NVPEDIDO;
 struct nvPedido{

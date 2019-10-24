@@ -5,11 +5,13 @@ struct login{
 };
 
 void logar(){
+	//Define um usuario temporario para fazer a verificação do mesmo..
 	char checkUSER[10], checkPASS[10];
-	
-	FILE* idUSERS;
+	//Chama a struct login	
 	LOGIN lgn;
-	
+	//Define o idUSERS como file
+	FILE* idUSERS;
+	//Cabeçalho 
 	cabecalhoMenu();
 	idUSERS = fopen("configs/idUSERS.txt", "rb");
 	if(idUSERS == NULL){
@@ -45,6 +47,7 @@ void cadastrarUsuarios(){
 	LOGIN lgn;
 	char checkPASS[10];
 	idUSERS = fopen("configs/idUSERS.txt" , "ab");
+	system("cls");
 	cabecalhoInicial();
 	if(idUSERS == NULL){
 		printf("Erro na abertura do arquivo!\n");
@@ -68,6 +71,8 @@ void cadastrarUsuarios(){
 				exit(0);
 			} else {
 				printf("Senha diferente! \n");
+				break;
+				cadastrarUsuarios();
 			}
 		} while(getch() == 's');
 		fclose(idUSERS);
