@@ -1,6 +1,6 @@
 [Project]
-FileName=PIM.dev
-Name=PIM
+FileName=Pizzaria.dev
+Name=Pizzaria
 Type=1
 Ver=2
 ObjFiles=
@@ -61,17 +61,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit2]
-FileName=headers\login.h
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit4]
-FileName=headers\cabecalhos.h
+FileName=info.h
 CompileCpp=0
 Folder=
 Compile=1
@@ -81,7 +71,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit3]
-FileName=headers\sistema.h
+FileName=info.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -90,8 +80,8 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit6]
-FileName=headers\Untitled2.h
+[Unit4]
+FileName=login.h
 CompileCpp=0
 Folder=
 Compile=1
@@ -101,7 +91,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit5]
-FileName=headers\produto.h
+FileName=login.c
 CompileCpp=0
 Folder=
 Compile=1
