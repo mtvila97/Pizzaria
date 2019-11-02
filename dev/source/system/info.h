@@ -1,35 +1,31 @@
 #ifndef INFO_H
 #define INFO_H
 
+
+
 /***************************************************
  * Bibliotecas                                     *
  * ************************************************/
+ 
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 #include <string.h>
+#include <windows.h>
+#include <conio.h>
+#include <dir.h>
 
 /***************************************************
  * Structs                                         *
  * ************************************************/
 
-typedef struct local LOCAL;
-typedef struct local LOCAL;
-struct local{
-	char endereco[150];
-	char cep[50];
-	char bairro[500];
-	int numero;
-	char uf[5];
-	char cidade[100];
-};
 
 typedef struct system SYSTEM;
 struct system{
-  //Inf Gerente
   char 	namePizzaria[50];
   char 	telPizzaria[20];
+  char*  endServidor;
   int 	idPizzaria;
-  LOCAL	end;
 };
 
 

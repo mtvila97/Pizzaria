@@ -1,3 +1,6 @@
+#ifndef LOGIN_H
+#define LOGIN_H
+
 /***************************************************
  * Bibliotecas                                     *
  * ************************************************/
@@ -14,18 +17,6 @@
  * Cabecalhos                                      *
  * ************************************************/
  
- #include "source/system/info.h"
- #include "source/login/login.h"
- #include "source/cabecalhos/cabecalhos.h"
+void menuPrincipal();
 
- /***************************************************
- * Inicio	                                        *
- * ************************************************/
- 
- int main(void){
- 	setlocale(LC_ALL, "Portuguese");
- 	SetConsoleTitle("Sistema - Pizzaria");
- 	checkarConfig();
- 	return 0;
- 	
- }
+#endif

@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o info.o login.o
-LINKOBJ  = main.o info.o login.o
+OBJ      = main.o source/login/login.o source/system/info.o source/cabecalhos/cabecalhos.o source/menu/menu.o source/vendas/vendas.o
+LINKOBJ  = main.o source/login/login.o source/system/info.o source/cabecalhos/cabecalhos.o source/menu/menu.o source/vendas/vendas.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -27,8 +27,17 @@ $(BIN): $(OBJ)
 main.o: main.c
 	$(CC) -c main.c -o main.o $(CFLAGS)
 
-info.o: info.c
-	$(CC) -c info.c -o info.o $(CFLAGS)
+source/login/login.o: source/login/login.c
+	$(CC) -c source/login/login.c -o source/login/login.o $(CFLAGS)
 
-login.o: login.c
-	$(CC) -c login.c -o login.o $(CFLAGS)
+source/system/info.o: source/system/info.c
+	$(CC) -c source/system/info.c -o source/system/info.o $(CFLAGS)
+
+source/cabecalhos/cabecalhos.o: source/cabecalhos/cabecalhos.c
+	$(CC) -c source/cabecalhos/cabecalhos.c -o source/cabecalhos/cabecalhos.o $(CFLAGS)
+
+source/menu/menu.o: source/menu/menu.c
+	$(CC) -c source/menu/menu.c -o source/menu/menu.o $(CFLAGS)
+
+source/vendas/vendas.o: source/vendas/vendas.c
+	$(CC) -c source/vendas/vendas.c -o source/vendas/vendas.o $(CFLAGS)

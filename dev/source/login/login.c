@@ -1,4 +1,6 @@
 #include "login.h"
+#include "../menu/menu.h"
+#include "../cabecalhos/cabecalhos.h"
 
 char dbUser[]={"database/users.dat"};
 
@@ -12,6 +14,7 @@ void registerGEN(){
 	
 	//Cadastrar Gerente
 	system("CLS");
+	cabecalhoInicial();
 	
 	fflush(stdin);
 	printf("Digite o seu nome: ");
@@ -56,6 +59,7 @@ void logar(){
 		printf("Erro na abertura do arquivo!\n");
 	} else {
 		system("cls");
+		cabecalhoPrincipal();
 		
 		//User
 		fflush(stdin);
@@ -71,7 +75,7 @@ void logar(){
 			//Gerente
 			if(strcmp(checkUSER, lgn.idGEN) == 0) {
 				if(strcmp(checkPASS, lgn.passGEN) == 0) {
-					printf("Logado como gerente");
+					menuPrincipal();
 				} else {
 					printf("senha inv?lido! \n");
 				}
